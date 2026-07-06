@@ -134,9 +134,7 @@ A separate administrator dashboard is available with the following features:
 ```
 Milestone1/
 │
-├── app.py
-├── db.py
-├── otp.py
+├── Miestone1.ipynb
 ├── README.md
 └── screenshots/
       ├── login.jpeg
