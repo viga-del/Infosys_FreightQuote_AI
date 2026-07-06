@@ -139,13 +139,13 @@ Milestone1/
 ├── otp.py
 ├── README.md
 └── screenshots/
-      ├── login.png
-      ├── signup.png
-      ├── forgot_security.png
-      ├── forgot_otp.png
-      ├── otp_email.png
-      ├── dashboard.png
-      └── admin_dashboard.png
+      ├── login.jpeg
+      ├── signup.jpeg
+      ├── forgot_security.jpeg
+      ├── forgot_otp.jpeg
+      ├── otp_email.jpeg
+      ├── dashboard.jpeg
+      └── admin_dashboard.jpeg
 ```
 
 ---
@@ -206,43 +206,43 @@ Open the generated ngrok public URL in your browser.
 
 ## Login Page
 
-![Login Page](screenshots/login.png)
+![Login Page](screenshots/login.jpeg)
 
 ---
 
 ## Signup Page
 
-![Signup Page](screenshots/signup.png)
+![Signup Page](screenshots/signup.jpeg)
 
 ---
 
 ## Forgot Password – Security Question
 
-![Forgot Password Security](screenshots/forgot_security.png)
+![Forgot Password Security](screenshots/forgot_security.jpeg)
 
 ---
 
 ## Forgot Password – OTP Verification
 
-![Forgot Password OTP](screenshots/forgot_otp.png)
+![Forgot Password OTP](screenshots/forgot_otp.jpeg)
 
 ---
 
 ## OTP Email
 
-![OTP Email](screenshots/otp_email.png)
+![OTP Email](screenshots/otp_email.jpeg)
 
 ---
 
 ## User Dashboard
 
-![User Dashboard](screenshots/dashboard.png)
+![User Dashboard](screenshots/dashboard.jpeg)
 
 ---
 
 ## Admin Dashboard
 
-![Admin Dashboard](screenshots/admin_dashboard.png)
+![Admin Dashboard](screenshots/admin_dashboard.jpeg)
 
 ---
 
