@@ -1,268 +1,233 @@
-# Infosys Springboard Internship 7.0
-
+# 🔐 Infosys Springboard Internship 7.0
 ## Batch 1 – Milestone 1
-
 # User Authentication Module
 
-## Project Overview
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![SQLite](https://img.shields.io/badge/SQLite-Database-green)
+![JWT](https://img.shields.io/badge/JWT-Authentication-orange)
+![bcrypt](https://img.shields.io/badge/bcrypt-Security-success)
 
-This project was developed as part of the **Infosys Springboard Internship 7.0 – Batch 1, Milestone 1**.
+## 📖 Project Overview
+This project was developed as part of **Infosys Springboard Internship 7.0 – Batch 1, Milestone 1**.
 
-The objective of this milestone is to design and implement a secure **User Authentication System** using **Python**, **Streamlit**, **SQLite**, **JWT Authentication**, and **Gmail OTP Verification**.
+It implements a secure authentication system using **Python, Streamlit, SQLite, JWT Authentication, bcrypt, Gmail OTP Verification, Google Colab Secrets, and ngrok**.
 
-The application enables users to register, log in securely, recover forgotten passwords, and access role-based dashboards while following secure authentication practices.
-
----
-
-# Features Implemented
-
-## User Registration (Signup)
-
-- User Registration with Username and Email
-- Unique Username Validation
-- Unique Email Validation
-- Password Confirmation
-- Security Question Selection
-- Security Answer Storage
-- Password Hashing using bcrypt
+Users can register, log in securely, recover passwords, and access protected dashboards while following authentication best practices.
 
 ---
 
-## User Login
+# ✨ Features
 
-- Secure Login using Email and Password
-- Generic Error Message for Invalid Credentials
-- JWT-Based Session Authentication
-- Secure Session Management
+## 👤 User Registration
+- Username & Email registration
+- Unique username/email validation
+- Password confirmation
+- Security question & answer
+- Password hashing using bcrypt
 
----
+## 🔑 Login
+- Email & password authentication
+- Generic error messages
+- JWT session management
+- Secure dashboard access
 
-## Forgot Password
+## 🔄 Forgot Password
+### Security Question
+- Verify security answer
+- Reset password securely
 
-The application supports two password recovery methods.
+### Gmail OTP
+- Send OTP to registered email
+- Verify OTP
+- Reset password
 
-### Security Question Verification
+## 🛡 Security
+- bcrypt hashing
+- JWT authentication
+- Password history
+- Login attempt limiting
+- Account lock
+- Gmail OTP
+- Google Colab Secrets
 
-- Verify the registered security question
-- Validate the user's security answer
-- Reset the password securely
-
-### OTP Verification
-
-- Send a One-Time Password (OTP) to the registered Gmail account
-- Verify the OTP
-- Allow secure password reset
-
----
-
-## Password Validation
-
-Passwords must satisfy the following conditions:
-
-- Minimum 8 characters
-- At least one uppercase letter
-- At least one lowercase letter
-- At least one digit
-- At least one special character
-
----
-
-## Email Validation
-
-The application validates email addresses according to the required format.
-
-Example:
-
-```
-ab@cd.ef
-```
+## 👨‍💼 Admin Dashboard
+- Secure admin login
+- View users
+- View registration details
+- Passwords never displayed
 
 ---
 
-# Database Features
-
-SQLite is used to store:
-
-- User Information
-- Password Hashes
-- Password History
-- Login Attempts
-- Registration Date and Time
-
----
-
-# Security Features
-
-- bcrypt Password Hashing
-- JWT Authentication
-- Password History Tracking
-- Login Attempt Limiting
-- Account Lock after Multiple Failed Attempts
-- Gmail OTP Authentication
-- Google Colab Secrets Integration
-
----
-
-# Admin Dashboard
-
-A separate administrator dashboard is available with the following features:
-
-- Secure Admin Login
-- View Registered Users
-- View User Registration Details
-- Passwords are never displayed
-
----
-
-# Technology Stack
+# 🛠 Technology Stack
 
 | Technology | Purpose |
-|------------|---------|
-| Python | Backend Development |
-| Streamlit | User Interface |
+|---|---|
+| Python | Backend |
+| Streamlit | UI |
 | SQLite | Database |
-| JWT | Session Authentication |
+| JWT | Authentication |
 | bcrypt | Password Hashing |
-| Gmail SMTP | OTP Delivery |
-| Pyngrok | Public URL Generation |
-| Google Colab | Development Environment |
+| Gmail SMTP | OTP |
+| pyngrok | Public URL |
+| Google Colab | Development |
 
 ---
 
-# Project Structure
+# 📁 Project Structure
 
-```
+```text
 Milestone1/
 │
-├── Miestone1.ipynb
+├── Milestone1.ipynb
 ├── README.md
 └── screenshots/
-      ├── login.jpeg
-      ├── signup.jpeg
-      ├── forgot_security.jpeg
-      ├── forgot_otp.jpeg
-      ├── otp_email.jpeg
-      ├── dashboard.jpeg
-      └── admin_dashboard.jpeg
+    ├── login.jpeg
+    ├── signup.jpeg
+    ├── forgot_security.jpeg
+    ├── forgot_otp.jpeg
+    ├── otp_email.jpeg
+    ├── dashboard.jpeg
+    └── admin_dashboard.jpeg
 ```
 
----
-
-# Google Colab Secrets
-
-The following secrets are securely stored using **Google Colab Secrets**.
+# 🔒 Google Colab Secrets
 
 | Secret | Description |
-|---------|-------------|
-| JWT_SECRET | Secret key used for JWT token generation |
-| NGROK_AUTHTOKEN | ngrok authentication token |
-| EMAIL_ADDRESS | Gmail account used to send OTP |
+|---|---|
+| JWT_SECRET | JWT signing key |
+| NGROK_AUTHTOKEN | ngrok token |
+| EMAIL_ADDRESS | Gmail |
 | EMAIL_PASSWORD | Gmail App Password |
 
-No sensitive credentials are hardcoded into the source code.
+No credentials are hardcoded.
 
----
-
-# How to Run the Project
-
-### Step 1
-
-Open the project in **Google Colab**.
-
-### Step 2
-
-Configure the following Google Colab Secrets:
-
-- JWT_SECRET
-- NGROK_AUTHTOKEN
-- EMAIL_ADDRESS
-- EMAIL_PASSWORD
-
-### Step 3
-
-Install the required libraries.
+# 🚀 Installation
 
 ```bash
 pip install streamlit pyjwt bcrypt pyngrok plotly streamlit-option-menu
 ```
 
-### Step 4
+Run notebook cells in order and open the generated ngrok URL.
 
-Run all the project cells/files in the correct order.
+# 🌐 Creating an ngrok Token
 
-### Step 5
+1. Create a free account at https://dashboard.ngrok.com/signup
+2. Login and copy **Your Authtoken**.
+3. Save it in Colab Secrets as `NGROK_AUTHTOKEN`.
+4. Authenticate:
 
-Launch the Streamlit application.
+```python
+from pyngrok import ngrok
+ngrok.set_auth_token(NGROK_AUTHTOKEN)
+```
 
-### Step 6
+5. Start tunnel:
 
-Open the generated ngrok public URL in your browser.
+```python
+public_url = ngrok.connect(8501)
+print(public_url)
+```
 
----
+# 🔑 Creating a JWT Secret
 
-# Screenshots
+```python
+import secrets
+print(secrets.token_hex(32))
+```
+
+Store the generated value as `JWT_SECRET` in Colab Secrets.
+
+# 📧 Gmail App Password
+
+- Enable Google 2-Step Verification.
+- Open Google Account → Security → App Passwords.
+- Generate a Mail App Password.
+- Store:
+  - EMAIL_ADDRESS
+  - EMAIL_PASSWORD
+
+# 📸 Screenshots
 
 ## Login Page
+![Login](screenshots/login.jpeg)
 
-![Login Page](screenshots/login.jpeg)
-
----
+Registered users can log in using their email and password. After successful verification, a JWT token is created to maintain a secure authenticated session.
 
 ## Signup Page
+![Signup](screenshots/signup.jpeg)
 
-![Signup Page](screenshots/signup.jpeg)
-
----
+Users create a new account with a unique username, email, strong password, and security question. Passwords are hashed using bcrypt before storage.
 
 ## Forgot Password – Security Question
+![Security](screenshots/forgot_security.jpeg)
 
-![Forgot Password Security](screenshots/forgot_security.jpeg)
+Users answer their registered security question to verify identity before securely resetting their password.
 
----
+## Forgot Password – OTP
+![OTP](screenshots/forgot_otp.jpeg)
 
-## Forgot Password – OTP Verification
-
-![Forgot Password OTP](screenshots/forgot_otp.jpeg)
-
----
+A one-time password is sent to the registered Gmail account. The password can be reset only after successful OTP verification.
 
 ## OTP Email
+![Email](screenshots/otp_email.jpeg)
 
-![OTP Email](screenshots/otp_email.jpeg)
-
----
+The application sends a six-digit OTP using Gmail SMTP. The OTP expires after a short period for improved security.
 
 ## User Dashboard
+![Dashboard](screenshots/dashboard.jpeg)
 
-![User Dashboard](screenshots/dashboard.jpeg)
-
----
+Authenticated users are redirected to a protected dashboard where access is controlled using JWT-based authentication.
 
 ## Admin Dashboard
+![Admin](screenshots/admin_dashboard.jpeg)
 
-![Admin Dashboard](screenshots/admin_dashboard.jpeg)
+The administrator can monitor registered users and account information while keeping password hashes hidden.
 
----
+# 🔄 Project Workflow
 
-# Learning Outcomes
+```text
+User
+ │
+ ├── Signup
+ │      │
+ │      ▼
+ │ Validate → Hash Password → SQLite
+ │
+ ├── Login
+ │      │
+ │      ▼
+ │ Verify → JWT → Dashboard
+ │
+ └── Forgot Password
+        │
+        ├── Security Question
+        └── Gmail OTP
+                │
+                ▼
+          Reset Password
+```
 
-This project provided practical experience in:
+# 🎯 Learning Outcomes
 
-- User Authentication
-- JWT-Based Session Management
-- Password Hashing with bcrypt
-- SQLite Database Management
-- Gmail SMTP Integration
-- OTP Verification
-- Streamlit Application Development
+- Authentication systems
+- JWT
+- bcrypt
+- SQLite
+- Streamlit
+- Gmail SMTP
+- OTP
 - Google Colab Secrets
-- ngrok Deployment
-- Secure Authentication Best Practices
+- ngrok deployment
+
+# 🚀 Future Enhancements
+
+- Multi-Factor Authentication
+- Email Verification
+- Password Strength Meter
+- User Profile Management
+- Audit Logs
+- Docker Deployment
 
 ---
-
-# Future Enhancements
-
-- Multi-Factor Authentication (MFA)
-- Email Verification during Registration
-- Password Strength Indicator
+Developed for **Infosys Springboard Internship 7.0 – Batch 1 – Milestone 1**
