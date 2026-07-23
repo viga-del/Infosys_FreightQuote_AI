@@ -310,6 +310,3 @@ Shows the Progressive Account Lockout feature after multiple failed login attemp
 ![OTP Cooldown](screenshots/otp_cooldown.jpeg)
 
 Displays the OTP resend cooldown notification during the Forgot Password process. It demonstrates how the system enforces increasing waiting periods between OTP requests to prevent spam and abuse.
-### ⏳ otp_cooldown.jpeg
-
-Displays the OTP resend cooldown notification during the Forgot Password process. It demonstrates how the system enforces increasing waiting periods between OTP requests to prevent spam and abuse.
