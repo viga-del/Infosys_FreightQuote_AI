@@ -153,7 +153,9 @@ Milestone2/
     ├── pricing_calculator.jpeg
     ├── admin_model_card.jpeg
     ├── admin_user_actions.jpeg
-    └── lockout_otp.jpeg
+    └── account_lockout.jpeg
+    └── otp_cooldown.jpeg
+    
 ```
 
 ---
@@ -285,6 +287,12 @@ Shows the administrative user management interface. It demonstrates how administ
 
 ---
 
-### 🔒 lockout_otp.jpeg
+### 🔒 account_lockout.jpeg
 
-Captures both the Progressive Account Lockout notification and the OTP resend cooldown message. It verifies the enterprise security mechanisms implemented to protect user accounts against misuse and brute-force attacks.
+Shows the Progressive Account Lockout feature after multiple failed login attempts. The screenshot displays the security message informing the user that the account has been temporarily or permanently locked to prevent unauthorized access.
+
+---
+
+### ⏳ otp_cooldown.jpeg
+
+Displays the OTP resend cooldown notification during the Forgot Password process. It demonstrates how the system enforces increasing waiting periods between OTP requests to prevent spam and abuse.
