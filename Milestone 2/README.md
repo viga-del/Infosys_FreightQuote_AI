@@ -1,93 +1,290 @@
-# FreightQuote AI — Milestone 2
+# 🚢 FreightQuote AI Platform — Milestone 2
 
-## What Milestone 2 adds on top of Milestone 1
+## 📌 What Milestone 2 Adds on Top of Milestone 1
 
-Milestone 1 delivered the core authentication module — JWT session handling,
-a Streamlit login/registration UI, SQLite-backed credentials, and Gmail OTP
-verification. Milestone 2 unifies that security gateway with a multi-agent
-ML core and an LLM Copilot, and adds three hardening layers:
+Milestone 1 established the foundation of the FreightQuote AI Platform by implementing a secure authentication system with **JWT-based session management**, a **Streamlit user interface**, **SQLite database integration**, and **Gmail OTP verification** for password recovery.
 
-1. **Progressive account lockout** — 3rd failed login locks the account for
-   5 minutes, the 4th for 15 minutes, and the 5th locks it permanently until
-   an Admin unlocks it from the Admin Dashboard.
-2. **OTP resend rate limiting** — resend cooldowns escalate 60s → 3min → 5min → 1hr.
-3. **Real-time password strength checker** — Weak (<5 chars, blocked) /
-   Average (5-9 chars, allowed with a warning) / Good (10+ chars).
+Milestone 2 significantly extends the platform by integrating intelligent Machine Learning models, an AI-powered logistics assistant, and enterprise-level security mechanisms. The project evolves from a simple authentication system into a complete AI-powered freight analytics platform capable of providing pricing predictions, route risk analysis, compliance monitoring, and intelligent decision support.
 
-On top of that, Milestone 2 introduces:
+### 🔐 Enhanced Security Features
 
-- **Three autonomous ML agents** (Dynamic Pricing, Route Delay Classifier,
-  Carrier Compliance Sentinel), each trained on 2 Kaggle datasets and
-  comparing 7 algorithms before a champion model is selected and logged.
-- **An AI Copilot** powered by Qwen2.5-3B-Instruct (4-bit NF4), which answers
-  free-form logistics questions and synthesises the 3 agents' outputs into a
-  structured JSON audit action.
-- **A fully functional Admin Dashboard** with Add / Delete / Unlock user
-  lifecycle controls and an ML Model Card tab.
+#### Progressive Account Lockout
+To protect user accounts from brute-force login attempts, the application implements a progressive lockout mechanism.
 
-## Tech Stack
+- After **3 consecutive failed login attempts**, the account is locked for **5 minutes**.
+- After the **4th failed attempt**, the lock duration increases to **15 minutes**.
+- After the **5th failed attempt**, the account becomes permanently locked until an administrator unlocks it through the Admin Dashboard.
+
+---
+
+#### OTP Resend Rate Limiting
+
+To prevent OTP abuse and spam requests, resend cooldowns increase progressively.
+
+| OTP Request | Cooldown |
+|-------------|-----------|
+| First Resend | 60 Seconds |
+| Second Resend | 3 Minutes |
+| Third Resend | 5 Minutes |
+| Fourth & Above | 1 Hour |
+
+---
+
+#### Real-Time Password Strength Checker
+
+Password strength is validated while users register or reset their password.
+
+| Password Length | Strength | Status |
+|-----------------|----------|--------|
+| Less than 5 Characters | 🔴 Weak | Registration Blocked |
+| 5 – 9 Characters | 🟡 Average | Allowed with Warning |
+| 10+ Characters | 🟢 Good | Recommended |
+
+---
+
+## 🤖 Intelligent AI Features Added in Milestone 2
+
+### Multi-Agent Machine Learning Engine
+
+Milestone 2 introduces three independent AI agents, each solving a different logistics problem. Every agent is trained using **two Kaggle logistics datasets** and compares **seven different Machine Learning algorithms** before automatically selecting the best-performing model.
+
+### Agent 1 – Dynamic Freight Pricing
+
+Predicts estimated freight transportation costs based on multiple shipment parameters such as weight, distance, congestion level, shipment type, and destination.
+
+### Agent 2 – Route Delay Classifier
+
+Predicts whether a shipment is likely to experience delays using historical transportation patterns and logistics features.
+
+### Agent 3 – Carrier Compliance Sentinel
+
+Analyzes carrier performance and predicts compliance risks by evaluating shipment history, operational metrics, and logistics records.
+
+---
+
+## 🤖 AI Logistics Copilot
+
+Milestone 2 also integrates an AI-powered logistics assistant using **Qwen2.5-3B-Instruct (4-bit NF4 Quantized Model)**.
+
+The AI Copilot allows users to:
+
+- Ask logistics-related questions in natural language.
+- Receive shipment recommendations.
+- Understand ML prediction results.
+- Generate executive summaries.
+- Produce structured JSON audit reports using outputs from all three ML agents.
+
+This provides an interactive decision-support system for freight management.
+
+---
+
+## 👨‍💼 Admin Dashboard
+
+A dedicated administrator panel has been introduced to simplify system administration.
+
+The dashboard allows administrators to:
+
+- Add new users.
+- Delete existing users.
+- Unlock permanently locked accounts.
+- Monitor machine learning model performance.
+- Manage user roles.
+- View authentication status.
+- Access ML Model Card showing evaluation metrics for all AI agents.
+
+Only users with the **Admin** role can access these administrative features.
+
+---
+
+# 🛠 Technology Stack
 
 | Layer | Technology |
-|---|---|
-| UI | Streamlit |
-| Auth | bcrypt, PyJWT, SQLite |
-| ML | scikit-learn, joblib |
-| LLM | Qwen2.5-3B-Instruct (4-bit via bitsandbytes/transformers) |
-| Tunnel | pyngrok |
-| Data | kagglehub (with seeded synthetic fallback) |
+|--------|------------|
+| User Interface | Streamlit |
+| Authentication | bcrypt, PyJWT, SQLite |
+| Machine Learning | Scikit-Learn, Joblib |
+| Large Language Model | Qwen2.5-3B-Instruct (4-bit via Transformers & BitsAndBytes) |
+| Public Deployment | pyngrok |
+| Data Source | kagglehub (with seeded synthetic fallback support) |
 
-## System Architecture
+---
 
-| Phase | Module / Component | Responsibility |
-|---|---|---|
-| Phase 1: Security Gateway | `auth.py` | Login, Registration, Forgot Password (Gmail OTP), progressive lockout, password strength. Stores hashed credentials & lockout state in SQLite. |
-| Phase 2: Domain Intelligence | `train_ml_freight.py`, model files | Agent 1: Dynamic Pricing, Agent 2: Route Delay Classifier, Agent 3: Carrier Compliance Sentinel. |
-| Phase 3: Generative Advisory | `llm_engine_freight.py` | Synthesises the 3 agents' numerical outputs into executive shipping strategies + a structured JSON audit action. |
-| Phase 4: System Administration | `admin_dash.py` | Add / Delete / Unlock users, ML Model Card — restricted to `role == 'Admin'`. |
+# 🏗 System Architecture
 
-## Indian Port Coverage
+| Phase | Module | Responsibility |
+|--------|---------|---------------|
+| **Phase 1 – Security Gateway** | auth.py | Handles Login, Registration, Forgot Password, Gmail OTP Verification, JWT Authentication, Password Strength Validation, and Progressive Account Lockout. Stores encrypted credentials and account status securely in SQLite. |
+| **Phase 2 – Domain Intelligence** | train_ml_freight.py | Trains and evaluates three autonomous Machine Learning agents for Freight Pricing, Route Delay Prediction, and Carrier Compliance analysis before selecting the best-performing models. |
+| **Phase 3 – Generative Advisory** | llm_engine_freight.py | Uses the Qwen2.5 LLM to combine outputs from all ML agents and generate intelligent logistics recommendations together with structured JSON audit actions. |
+| **Phase 4 – System Administration** | admin_dash.py | Provides administrative tools including Add User, Delete User, Unlock Account, and ML Model Card. Accessible only to authenticated Admin users. |
+
+---
+
+# 🇮🇳 Indian Port Coverage
 
 | Port | Code | Region | Specialty |
-|---|---|---|---|
-| Mumbai (JNPT) | INNSA1 | West Coast | Container & general cargo hub |
-| Mundra | INMUN1 | West Coast | Largest private port, bulk + container |
-| Chennai | INMAA1 | East Coast | Automobile & industrial exports |
-| Cochin | INCOK1 | South-West Coast | Transshipment & spices/seafood |
+|------|------|--------|-----------|
+| Mumbai (JNPT) | INNSA1 | West Coast | India's largest container port handling international cargo and commercial shipments. |
+| Mundra | INMUN1 | West Coast | Largest private commercial port supporting container, bulk cargo, and industrial logistics. |
+| Chennai | INMAA1 | East Coast | Major export hub for automobiles, manufacturing industries, and engineering goods. |
+| Cochin | INCOK1 | South-West Coast | Strategic transshipment port supporting seafood exports, spices, and international trade. |
 
-## Setup — Colab Secrets & Kaggle API
+---
 
-1. In Colab, click the 🔑 **Secrets** icon in the left sidebar.
-2. Add each of: `JWT_SECRET_KEY`, `ADMIN_EMAIL_ID`, `ADMIN_PASSWORD`,
-   `NGROK_AUTHTOKEN`, `HF_TOKEN`, and optionally `EMAIL_ID`, `EMAIL_PASSWORD`,
-   `KAGGLE_USERNAME`, `KAGGLE_KEY`. Toggle notebook access **ON** for each.
-3. For a Kaggle token: log in at kaggle.com → profile picture → Settings →
-   API → **Create New Token**. This downloads `kaggle.json` containing your
-   username and key — put those two values into the `KAGGLE_USERNAME` /
-   `KAGGLE_KEY` secrets. The notebook trains on synthetic data automatically
-   if these aren't set.
-4. For Gmail OTP: enable 2-Step Verification on the sending Gmail account,
-   then create an **App Password** (Google Account → Security → App
-   Passwords) and use that as `EMAIL_PASSWORD`. If unset, OTPs print to the
-   notebook console instead — the app still works end to end.
+# 📂 Milestone 2 Project Folder Structure
 
-## How to Run
+```text
+Milestone2/
+│
+├── FreightQuote_AI_Milestone2.ipynb
+├── README.md
+├── requirements.txt
+│
+├── auth.py
+├── db.py
+├── admin_dash.py
+├── ui_theme.py
+├── train_ml_freight.py
+├── llm_engine_freight.py
+│
+└── screenshots/
+    ├── home.png
+    ├── copilot.png
+    ├── pricing_calculator.png
+    ├── admin_model_card.png
+    ├── admin_user_actions.png
+    └── lockout_otp.png
+```
 
-1. Open `FreightQuote_AI_Milestone2.ipynb` in Google Colab.
-2. **Runtime → Change runtime type → T4 GPU → Save.**
-3. Run every cell top to bottom, in order. Step 6 trains and saves all 3 ML
-   agents; Step 7 launches the app and prints a public HTTPS URL.
-4. Log in with your `ADMIN_EMAIL_ID` / `ADMIN_PASSWORD` (defaults:
-   `infosys@ai` / `admin@123`).
-5. Run Step 8 when finished to stop the app and free GPU memory.
+---
 
-## Screenshots
+# ⚙ Setup — Colab Secrets & Kaggle API
 
-- `screenshots/home.png` — Home page KPI overview
-- `screenshots/copilot.png` — AI Copilot prompt + response
-- `screenshots/pricing_calculator.png` — ML Pricing Calculator input + predicted cost
-- `screenshots/admin_model_card.png` — Admin Panel → ML Model Card tab
-- `screenshots/admin_user_actions.png` — Admin Panel → Add / Delete / Unlock actions
-- `screenshots/lockout_otp.png` — A triggered lockout message and an OTP cooldown message
+### Step 1 – Configure Colab Secrets
 
+Open your notebook in Google Colab and click the **🔑 Secrets** icon available in the left sidebar.
 
+Create the following secrets and enable notebook access for each one:
 
+- JWT_SECRET_KEY
+- ADMIN_EMAIL_ID
+- ADMIN_PASSWORD
+- NGROK_AUTHTOKEN
+- HF_TOKEN
+- EMAIL_ID *(Optional)*
+- EMAIL_PASSWORD *(Optional)*
+- KAGGLE_USERNAME *(Optional)*
+- KAGGLE_KEY *(Optional)*
+
+---
+
+### Step 2 – Configure Kaggle API
+
+1. Log in to **Kaggle**.
+2. Open **Profile → Settings**.
+3. Scroll to the **API** section.
+4. Click **Create New Token**.
+5. Download the **kaggle.json** file.
+6. Copy the Username and Key into the corresponding Colab Secrets.
+
+If Kaggle credentials are unavailable, the notebook automatically switches to a seeded synthetic dataset so the application continues to function normally.
+
+---
+
+### Step 3 – Gmail OTP Configuration
+
+To enable real email-based OTP verification:
+
+1. Enable **2-Step Verification** on your Gmail account.
+2. Navigate to **Google Account → Security → App Passwords**.
+3. Generate a new App Password.
+4. Store it as **EMAIL_PASSWORD** in Colab Secrets.
+
+If these credentials are not configured, OTP codes will be printed in the notebook console instead, allowing the complete authentication workflow to remain functional.
+
+---
+
+# ▶ How to Run the Project
+
+### Step 1
+
+Open **FreightQuote_AI_Milestone2.ipynb** in Google Colab.
+
+### Step 2
+
+Change the runtime to:
+
+**Runtime → Change Runtime Type → T4 GPU → Save**
+
+This allows the Qwen2.5 language model to load efficiently.
+
+### Step 3
+
+Execute every notebook cell sequentially from top to bottom.
+
+During execution:
+
+- Authentication system initializes.
+- Machine Learning models are trained.
+- Best-performing models are selected.
+- AI Copilot is loaded.
+- Streamlit application starts.
+- Ngrok generates a public HTTPS URL.
+
+### Step 4
+
+Open the generated URL in your browser.
+
+Login using:
+
+```
+Email:
+infosys@ai
+
+Password:
+admin@123
+```
+
+(or use the credentials stored in your Colab Secrets.)
+
+### Step 5
+
+When finished, execute the final notebook cell to stop the Streamlit application and release GPU resources.
+
+---
+
+# 📸 Screenshots
+
+### 🏠 home.png
+
+Displays the application's Home Dashboard after successful login. It provides users with a quick overview of platform features, key statistics, and navigation to the AI modules.
+
+---
+
+### 🤖 copilot.png
+
+Shows the AI Copilot interface with a user prompt and the generated response from the Qwen2.5 language model. It demonstrates the platform's ability to answer logistics questions and generate intelligent recommendations.
+
+---
+
+### 📊 pricing_calculator.png
+
+Illustrates the Freight Pricing Calculator where shipment parameters are entered to predict transportation cost. The screenshot highlights the real-time ML prediction generated by the pricing model.
+
+---
+
+### 📈 admin_model_card.png
+
+Displays the ML Model Card inside the Admin Dashboard. It presents evaluation metrics such as R² Score and ROC-AUC for all three trained Machine Learning agents.
+
+---
+
+### 👨‍💼 admin_user_actions.png
+
+Shows the administrative user management interface. It demonstrates how administrators can add new users, delete existing accounts, and unlock permanently locked users from a single dashboard.
+
+---
+
+### 🔒 lockout_otp.png
+
+Captures both the Progressive Account Lockout notification and the OTP resend cooldown message. It verifies the enterprise security mechanisms implemented to protect user accounts against misuse and brute-force attacks.
