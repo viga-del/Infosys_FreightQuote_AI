@@ -538,7 +538,7 @@ Infosys_FreightQuote_AI/
     ├── RAG_Pipeline.ipynb
     ├── README.md
     └── evaluation_queries.md
-
+```
 # 🔄 Milestone 3 Workflow
 
 The following activities were carried out during Milestone 3:
