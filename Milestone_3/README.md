@@ -503,50 +503,41 @@ The retrieved context is supplied to the Large Language Model to generate accura
 # 📁 Project Structure
 
 ```
-Infosys_FreightQuote_AI
-
+Infosys_FreightQuote_AI/
 │
-
-├── Milestone1
-│ ├── Authentication
-│ ├── Login
-│ ├── Registration
-│ ├── Security
-│ └── Database
-
+├── README.md
 │
-
-├── Milestone2
-│ ├── AI Copilot
-│ ├── Agent 1
-│ ├── Agent 2
-│ ├── Agent 3
-│ ├── Analytics
-│ ├── Model Retraining
-│ └── Admin Dashboard
-
+├── Milestone_1/
+│   ├── Milestone1.ipynb
+│   ├── README.md
+│   ├── app.py
+│   ├── db.py
+│   ├── auth.py
+│   ├── utils.py
+│   ├── requirements.txt
+│   ├── users.db
+│   └── screenshots/
+│      
 │
-
-├── Milestone3
-│ ├── RAG Pipeline Notebook
-│ ├── Knowledge Base
-│ ├── PDF Documents
-│ ├── README.md
-│ └── Supporting Files
-
+├── Milestone_2/
+│   ├── FreightQuote_AI_Milestone2.ipynb
+│   ├── README.md
+│   ├── auth.py
+│   ├── db.py
+│   ├── admin_dash.py
+│   ├── ui_theme.py
+│   ├── train_ml_freight.py
+│   ├── llm_engine_freight.py
+│   ├── requirements.txt
+│   ├── users.db
+│   └── screenshots/
+│     
 │
-
-├── app.py
-├── auth.py
-├── db.py
-├── llm_engine.py
-├── analytics.py
-├── ui_theme.py
-├── requirements.txt
-└── README.md
-```
-
----
+└── Milestone_3/
+    ├── FreightQuote_AI_M1_M2_Combined.ipynb
+    ├── RAG_Pipeline.ipynb
+    ├── README.md
+    └── evaluation_queries.md
 
 # 🔄 Milestone 3 Workflow
 
@@ -575,6 +566,8 @@ This project was completed collaboratively by a team of four members.
 - Integrated Milestone 1 and Milestone 2 into a single unified application.
 - Ensured seamless interaction between authentication, AI modules, analytics, and administrative functionalities.
 - Verified compatibility between all integrated components.
+- Organized the GitHub repository structure.
+- Managed GitHub branches, commits, and Pull Requests.
 
 ---
 
@@ -608,7 +601,6 @@ This project was completed collaboratively by a team of four members.
 - Prepared comprehensive project documentation.
 - Created and maintained the README files.
 - Organized the GitHub repository structure.
-- Managed GitHub branches, commits, and Pull Requests.
 - Assisted in project organization and integration support.
 - Verified documentation consistency across milestones.
 
