@@ -1,4 +1,4 @@
-# FreightQuote AI – Enterprise AI-Powered Maritime Brokerage Platfor
+# FreightQuote AI – Enterprise AI-Powered Maritime Brokerage Platform
 
 **Infosys Springboard Internship Project – Milestone 3**
 
@@ -389,6 +389,19 @@ Infosys_FreightQuote_AI/
 6. Configured the Retrieval-Augmented Generation workflow.
 7. Organized the project structure and documentation.
 8. Managed collaboration using GitHub branches and Pull Requests.
+
+---
+
+## Team Contribution
+
+This project was completed collaboratively by a team of four members.
+
+| Name | Role | Contribution |
+|------|------|---------------|
+| **Vigasini** | Milestone Integration | Integrated Milestone 1 and Milestone 2 into a single unified application; ensured seamless interaction between authentication, AI modules, analytics, and administrative functionalities; verified compatibility between all integrated components; organized the GitHub repository structure; managed GitHub branches, commits, and Pull Requests. |
+| **Simran Kapoor** | RAG Pipeline Development | Developed a dedicated notebook for the Retrieval-Augmented Generation (RAG) pipeline; implemented document loading, embedding generation, vector storage, and semantic retrieval; integrated the retrieved context with the AI model for intelligent responses. |
+| **Yuvanesh** | Knowledge Base Preparation | Collected logistics-related PDF documents and supporting reference materials; organized and maintained the project knowledge base; prepared documents for preprocessing and retrieval within the RAG pipeline. |
+| **Tharani** | Documentation & Repository Management | Prepared comprehensive project documentation; created and maintained the README files; organized the GitHub repository structure; assisted in project organization and integration support; verified documentation consistency across milestones. |
 
 ---
 
