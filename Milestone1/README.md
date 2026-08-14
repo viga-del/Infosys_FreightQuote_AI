@@ -1,5 +1,5 @@
 # 🔐 Infosys Springboard Internship 7.0
-## Batch 1 – Milestone 1
+## Agentic AI for Maritime Freight Pricing and Route Optimization – Milestone 1
 # User Authentication Module
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
