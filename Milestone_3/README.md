@@ -1,302 +1,368 @@
-# Agentic AI for Maritime Freight Pricing and Route Optimization
+# 🚢 Agentic AI for Maritime Freight Pricing and Route Optimization
 
-**Infosys Springboard Internship Project – Milestone 3**
-
----
-
-## Project Overview
-
-FreightQuote AI is an AI-powered enterprise maritime brokerage platform developed as part of the Infosys Springboard Internship Program. The platform simplifies and automates freight quotation generation, shipment analysis, carrier evaluation, and logistics decision-making using Artificial Intelligence, Machine Learning, and Retrieval-Augmented Generation (RAG).
-
-The project integrates secure authentication, intelligent freight pricing, route and weather analysis, carrier auditing, analytics, and an AI Copilot into a single unified application.
-
-Milestone 3 focuses on integrating the work completed in Milestone 1 and Milestone 2 while extending the application with a Retrieval-Augmented Generation (RAG) pipeline, a document knowledge base, and collaborative project documentation.
+## Infosys Springboard Internship Project — Milestone 3
 
 ---
 
-## Project Objectives
+## 📖 Project Overview
 
-- Develop an enterprise-grade AI-powered freight quotation system.
-- Automate freight pricing using Machine Learning.
-- Assist logistics managers through an AI-powered Copilot.
-- Analyze shipping routes and weather conditions.
-- Evaluate carrier performance and compliance.
-- Build a Retrieval-Augmented Generation (RAG) pipeline for document-based question answering.
-- Integrate all milestones into a single modular application.
-- Maintain collaborative software development using GitHub.
+**FreightQuote AI** is an AI-powered maritime freight decision-support platform developed as part of the **Infosys Springboard Internship Program**.
 
----
+The platform brings together secure authentication, Machine Learning, AI-powered logistics assistance, freight pricing, route and weather analysis, carrier evaluation, analytics, and Retrieval-Augmented Generation (RAG) into a unified application.
 
-## Problem Statement
+**Milestone 3** focuses on integrating the capabilities developed during Milestones 1 and 2 and extending the platform with a document-based **RAG pipeline and knowledge base**. The milestone also improves the overall application workflow, documentation, and usability.
 
-The maritime logistics industry faces several challenges in generating freight quotations due to dynamic pricing, varying carrier performance, changing weather conditions, and the large volume of logistics documents. Manual quotation generation is time-consuming, error-prone, and inefficient.
-
-FreightQuote AI addresses these challenges by leveraging Artificial Intelligence, Machine Learning, and Retrieval-Augmented Generation (RAG) to automate freight quotation generation, provide intelligent logistics recommendations, and retrieve relevant information from logistics documents.
+The objective is to provide logistics users with a single platform where they can securely access freight intelligence, generate predictions, analyse operational information, and ask questions using both structured application data and unstructured logistics documents.
 
 ---
 
-## Proposed Solution
+## 🎯 Project Objectives
 
-FreightQuote AI provides an enterprise-level solution that combines secure authentication, AI-powered freight prediction, carrier evaluation, weather analysis, intelligent document retrieval, and an AI Copilot into a single platform.
+The main objectives of Milestone 3 are:
 
-The platform enables logistics managers to make informed decisions by utilizing machine learning models for prediction and RAG-powered document retrieval for context-aware responses.
-
----
-
-## Key Features
-
-- Secure User Authentication
-- AI Copilot powered by the Qwen 2.5 LLM
-- Freight Price Prediction
-- Route & Weather Analysis
-- Carrier Performance Audit
-- Analytics Dashboard
-- Model Retraining
-- Admin Dashboard
-- Retrieval-Augmented Generation (RAG)
-- PDF Knowledge Base
-- Semantic Search
-- Intelligent Question Answering
+- Integrate the authentication functionality developed in Milestone 1.
+- Integrate the AI and Machine Learning modules developed in Milestone 2.
+- Develop a dedicated Retrieval-Augmented Generation pipeline.
+- Build a searchable knowledge base from logistics-related PDF documents.
+- Enable semantic document retrieval.
+- Provide context-aware answers through the AI Copilot.
+- Combine structured data, ML predictions, and retrieved document information.
+- Improve the overall usability and integration of the FreightQuote AI platform.
+- Maintain a modular architecture that can be extended with additional maritime intelligence features.
 
 ---
 
-## System Architecture
+## 🚨 Problem Statement
 
-```
+Maritime freight operations involve large amounts of structured and unstructured information.
+
+Freight prices can change based on shipment characteristics, route conditions, carrier performance, weather, and other operational factors. At the same time, logistics teams need to work with documents such as shipping policies, maritime guidelines, port manuals, carrier documents, and regulatory references.
+
+Traditional workflows require users to manually search through these documents and separately analyse operational data. This can be time-consuming and may make decision-making less efficient.
+
+**FreightQuote AI** addresses this problem by combining:
+
+- Machine Learning-based predictions
+- AI-powered decision support
+- Route and weather analysis
+- Carrier performance analysis
+- Secure authentication
+- Document retrieval using RAG
+- Natural-language question answering
+
+---
+
+## 💡 Proposed Solution
+
+FreightQuote AI provides a unified AI-powered platform for maritime freight analysis.
+
+A typical workflow is:
+
+```text
 User
-  ↓
-Authentication Module
-  ↓
-AI Copilot
-  ↓
-Machine Learning Agents
-  ↓
-Analytics Dashboard
-  ↓
-RAG Pipeline
-  ↓
-Knowledge Base
-  ↓
-SQLite Database
+  │
+  ▼
+Secure Authentication
+  │
+  ▼
+FreightQuote AI Dashboard
+  │
+  ├───────────────┬────────────────┬────────────────┐
+  ▼               ▼                ▼                ▼
+Freight        Route &         Carrier          Analytics
+Pricing        Weather         Analysis         Dashboard
+  │               │                │                │
+  └───────────────┴────────────────┴────────────────┘
+                          │
+                          ▼
+                    AI Copilot
+                          │
+                          ▼
+                   RAG Pipeline
+                          │
+                          ▼
+                 Logistics Documents
+                          │
+                          ▼
+                 Retrieved Context
+                          │
+                          ▼
+                  Context-Aware Answer
 ```
 
 ---
 
-## Project Workflow
+# ✨ Key Features
 
-1. User logs into the application.
-2. Authentication verifies user credentials.
-3. User accesses AI modules.
-4. Machine Learning predicts freight pricing.
-5. Route & Weather module analyzes shipment conditions.
-6. Carrier Audit evaluates carrier performance.
-7. RAG pipeline retrieves relevant information from logistics documents.
-8. AI Copilot generates context-aware responses.
-9. Analytics Dashboard displays business insights.
-10. Admin manages users and monitors system activities.
+## 🔐 1. Secure User Authentication
 
----
+The platform provides a complete authentication workflow.
 
-## Datasets Used
+### Registration
 
-- Freight Pricing Dataset
-- Carrier Performance Dataset
-- Port Information Dataset
-- Weather Dataset
-- Shipment Dataset
-- Logistics Documents (PDF)
-- Maritime Reports
+Users can create an account using:
 
-These datasets are used for model training, prediction, analytics, and document retrieval.
+- Username
+- Email address
+- Password
+- Password confirmation
+- Security question
+- Security answer
 
----
+Passwords are securely hashed before being stored.
 
-## Documentation Used
+### Login
 
-The RAG knowledge base contains documents such as:
+Registered users can securely log in using their credentials. Successful authentication creates a secure session using JWT-based authentication.
 
-- Freight Policies
-- Maritime Guidelines
-- Shipping Regulations
-- Port Operations Manuals
-- Carrier Documentation
-- Logistics Reports
-- Business Process Documents
-- PDF Reference Materials
+### Password Recovery
+
+The platform supports multiple password-recovery mechanisms:
+
+- Security question verification
+- Email OTP verification
+
+### Additional Security
+
+- Password hashing using bcrypt
+- JWT-based sessions
+- OTP verification
+- Security questions
+- Role-based access
+- Secure logout
+- Account protection mechanisms
 
 ---
 
-## Security Features
+## 🤖 2. AI Copilot
 
-- JWT Authentication
-- Password Hashing
-- Email OTP Verification
-- Security Questions
-- Role-Based Authentication
-- Admin Controls
-- Secure Session Management
+The AI Copilot provides a natural-language interface for interacting with the freight platform.
 
----
+Users can ask questions related to:
 
-## Performance Metrics
+- Freight prices
+- Shipments
+- Routes
+- Carriers
+- Weather
+- Logistics documents
+- Operational information
 
-Machine learning models are evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- RMSE
-- R² Score
-
-The best-performing model is selected as the Champion Model for deployment.
+The Copilot can use application data and retrieved document context to generate more relevant responses.
 
 ---
 
-## Development Workflow
+## 💰 3. Freight Price Prediction
 
-The project follows Agile software development practices:
+The platform uses Machine Learning to estimate freight quotation prices based on available shipment and logistics parameters.
 
+Possible input factors include:
+
+- Shipment information
+- Distance
+- Weight
+- Route characteristics
+- Transportation conditions
+- Historical freight information
+
+The prediction module helps users obtain faster and more consistent freight estimates.
+
+---
+
+## 🗺️ 4. Route & Weather Analysis
+
+The route and weather module supports logistics planning by analysing:
+
+- Shipping routes
+- Port information
+- Weather conditions
+- Potential operational risks
+- Route-related factors
+
+This information can help users understand conditions that may affect freight movement.
+
+---
+
+## 🚢 5. Carrier Performance Audit
+
+The Carrier Audit module evaluates carrier-related information to support logistics decisions.
+
+It can analyse areas such as:
+
+- Carrier performance
+- Shipment reliability
+- Compliance-related information
+- Historical operational records
+- Carrier comparison
+
+---
+
+## 📊 6. Analytics Dashboard
+
+The analytics dashboard presents important freight and model information in an easier-to-understand format.
+
+It can be used to review:
+
+- Freight statistics
+- Prediction results
+- Model performance
+- Shipment information
+- Carrier information
+- Operational insights
+
+---
+
+## 🔄 7. Model Retraining
+
+The platform provides a foundation for retraining Machine Learning models when new logistics data becomes available.
+
+```text
+New Dataset
+     ↓
+Data Preparation
+     ↓
+Feature Processing
+     ↓
+Model Training
+     ↓
+Model Evaluation
+     ↓
+Performance Comparison
+     ↓
+Best Model
+     ↓
+Updated Prediction System
 ```
-Requirement Analysis → System Design → Module Development → Testing → Integration → Deployment → Documentation
+
+---
+
+# 📚 Retrieval-Augmented Generation (RAG)
+
+## What is RAG?
+
+Retrieval-Augmented Generation combines document retrieval with a Large Language Model.
+
+Instead of relying only on information stored inside the language model, the system first searches the project knowledge base for relevant information and then provides the retrieved context to the AI model.
+
+This allows the Copilot to answer questions using project-specific documents.
+
+---
+
+## 🔄 RAG Pipeline
+
+The Milestone 3 RAG workflow is:
+
+```text
+             PDF Documents
+                  │
+                  ▼
+           Document Loading
+                  │
+                  ▼
+           Text Extraction
+                  │
+                  ▼
+             Text Cleaning
+                  │
+                  ▼
+               Chunking
+                  │
+                  ▼
+             Embeddings
+                  │
+                  ▼
+          Vector Database
+                  │
+                  ▼
+             User Query
+                  │
+                  ▼
+        Semantic Similarity Search
+                  │
+                  ▼
+          Relevant Documents
+                  │
+                  ▼
+          Retrieved Context
+                  │
+                  ▼
+             AI Copilot
+                  │
+                  ▼
+          Context-Aware Answer
 ```
 
 ---
 
-## Testing
+## 🗂️ RAG Knowledge Base
 
-- Unit Testing
-- Integration Testing
-- Functional Testing
-- User Acceptance Testing
-- AI Response Validation
-- Machine Learning Model Evaluation
+The knowledge base contains logistics-related reference documents.
+
+Examples include:
+
+- Freight policies
+- Maritime guidelines
+- Shipping regulations
+- Port operation manuals
+- Carrier documentation
+- Logistics reports
+- Business process documents
+- Maritime reference PDFs
+
+The documents are processed and converted into searchable representations so that relevant sections can be retrieved when a user asks a question.
 
 ---
 
-## Repository Structure Overview
+## 🔎 Semantic Search
 
+The RAG system uses semantic search rather than depending only on exact keyword matching.
+
+For example:
+
+```text
+User Query:
+"What documents explain customs procedures for a shipment?"
+
+              ↓
+
+Semantic Retrieval
+
+              ↓
+
+Relevant PDF Sections
+
+              ↓
+
+Context Provided to LLM
+
+              ↓
+
+AI Copilot Response
 ```
-Milestone 1 – Authentication
-        ↓
-Milestone 2 – Multi-Agent AI Platform
-        ↓
-Milestone 3 – RAG Pipeline
-        ↓
-Knowledge Base
-        ↓
-Project Documentation
-        ↓
-Final Integrated Application
-```
+
+This makes it possible to retrieve conceptually relevant information even when the exact words used in the document and the user's question are different.
 
 ---
 
-## Deployment
+# 🧠 Artificial Intelligence
 
-**Current:**
-- Google Colab
-- Ngrok
-- Streamlit
-
-**Future targets:**
-- Streamlit Cloud
-- Azure
-- AWS
-- Docker
-
----
-
-## User Guide
-
-| Step | Action |
-|------|--------|
-| 1 | Register a new account |
-| 2 | Login securely |
-| 3 | Access AI Copilot |
-| 4 | Generate freight quotations |
-| 5 | Analyze routes and weather |
-| 6 | Evaluate carrier performance |
-| 7 | Query logistics documents using RAG |
-| 8 | View analytics dashboard |
-| 9 | Admin manages users and system activities |
-
----
-
-## Project Outcomes
-
-- Intelligent Freight Quotation
-- AI-Assisted Decision Making
-- Machine Learning Prediction
-- Retrieval-Augmented Generation
-- Enterprise Authentication
-- Multi-Agent AI Platform
-- Intelligent Analytics
-- Knowledge-Based Question Answering
-- Collaborative Software Development
-
----
-
-## Milestone Overview
-
-### Milestone 1 – Secure Authentication Module
-
-Milestone 1 focused on developing a secure authentication system for the FreightQuote AI platform.
-
-**Features Implemented:**
-- User Registration
-- Secure Login
-- JWT Authentication
-- Password Hashing
-- Forgot Password
-- Security Questions
-- Email OTP Verification
-- Role-Based Authentication
-- SQLite Database Integration
-
-### Milestone 2 – Multi-Agent AI Platform
-
-Milestone 2 introduced the core AI-powered logistics modules.
-
-| Module | Description |
-|--------|-------------|
-| AI Copilot | Provides intelligent logistics assistance using the Qwen 2.5 Large Language Model |
-| Agent 1 – Freight Pricing | Predicts freight quotation prices using Machine Learning |
-| Agent 2 – Route & Weather Analysis | Analyzes shipping routes and weather conditions to support logistics planning |
-| Agent 3 – Carrier Audit | Evaluates carrier performance, compliance, and shipment reliability |
-| Analytics Dashboard | Displays freight statistics, model performance, and business insights |
-| Model Retraining | Retrains machine learning models using newly available logistics datasets |
-| Admin Dashboard | Provides administrative features including user management, monitoring, and analytics |
-
-### Milestone 3 – Project Integration & RAG Pipeline
-
-Milestone 3 focuses on integrating all previous work and extending the application with Retrieval-Augmented Generation (RAG).
-
-**Major Activities:**
-- Integration of the Milestone 1 Authentication Module.
-- Integration of the Milestone 2 AI and Machine Learning modules.
-- Development of a dedicated RAG notebook.
-- Collection and organization of logistics PDF documents.
-- Document preprocessing and knowledge base preparation.
-- Vector database creation.
-- Enterprise documentation.
-- GitHub collaboration using branches and Pull Requests.
-
----
-
-## Artificial Intelligence
+The AI layer uses:
 
 - Qwen 2.5 Large Language Model
 - Hugging Face Transformers
-- AI Copilot
 - Natural Language Processing
-- Retrieval-Augmented Generation (RAG)
+- AI Copilot
+- Retrieval-Augmented Generation
+
+The AI Copilot acts as the natural-language interface between the user and the platform's structured and unstructured information.
 
 ---
 
-## Machine Learning
+# 📈 Machine Learning
 
-The FreightQuote AI platform uses multiple machine learning algorithms for prediction and analysis:
+The FreightQuote AI platform uses Machine Learning for freight and logistics analysis.
+
+Algorithms used across the project include:
 
 - Random Forest
 - Decision Tree
@@ -304,177 +370,513 @@ The FreightQuote AI platform uses multiple machine learning algorithms for predi
 - Linear Regression
 - Support Vector Regression (SVR)
 
-The best-performing model is selected for deployment after evaluation.
+The models are evaluated using appropriate performance metrics, and the strongest-performing model can be selected for deployment.
 
 ---
 
-## RAG Knowledge Base
+## 📊 Model Evaluation
 
-The RAG pipeline retrieves information from logistics-related documents and provides context-aware answers. The knowledge base includes:
+### Classification Metrics
 
-- Shipping Guidelines
-- Maritime Reports
-- Freight Policies
-- Logistics Manuals
-- Port Information
-- PDF Documents
-- Business Documentation
+Classification models can be evaluated using:
 
-The retrieved context is supplied to the Large Language Model to generate accurate responses.
+- Accuracy
+- Precision
+- Recall
+- F1 Score
 
----
+### Regression Metrics
 
-## Technology Stack
+Regression models can be evaluated using:
 
-| Category | Technologies |
-|----------|--------------|
-| Frontend | Streamlit |
-| Backend | Python |
-| Database | SQLite |
-| Machine Learning | Scikit-learn, Pandas, NumPy |
-| Artificial Intelligence | Hugging Face, Transformers, Qwen 2.5 LLM |
-| Retrieval-Augmented Generation | LangChain, FAISS, Sentence Transformers |
-| Deployment | Google Colab, Ngrok |
-| Version Control | Git, GitHub |
+- RMSE
+- R² Score
 
----
+### Model Selection
 
-## Project Structure
-
-```
-Infosys_FreightQuote_AI/
-│
-├── README.md
-│
-├── Milestone_1/
-│   ├── Milestone1.ipynb
-│   ├── README.md
-│   ├── app.py
-│   ├── db.py
-│   ├── auth.py
-│   ├── utils.py
-│   ├── requirements.txt
-│   ├── users.db
-│   └── screenshots/
-│
-├── Milestone_2/
-│   ├── FreightQuote_AI_Milestone2.ipynb
-│   ├── README.md
-│   ├── auth.py
-│   ├── db.py
-│   ├── admin_dash.py
-│   ├── ui_theme.py
-│   ├── train_ml_freight.py
-│   ├── llm_engine_freight.py
-│   ├── requirements.txt
-│   ├── users.db
-│   └── screenshots/
-│
-└── Milestone_3/
-    ├── FreightQuote_AI_M1_M2_Combined.ipynb
-    ├── RAG_Pipeline.ipynb
-    ├── README.md
-    └── evaluation_queries.md
+```text
+Train Multiple Models
+        ↓
+Evaluate Performance
+        ↓
+Compare Metrics
+        ↓
+Select Best-Performing Model
+        ↓
+Champion Model
+        ↓
+Prediction
 ```
 
 ---
 
-## Milestone 3 Workflow
+# 🏗️ System Architecture
 
-1. Integrated Milestone 1 Authentication Module.
-2. Integrated Milestone 2 AI and Machine Learning modules.
-3. Developed a dedicated RAG Pipeline notebook.
-4. Collected and organized logistics-related PDF documents.
-5. Prepared the document knowledge base for semantic retrieval.
-6. Configured the Retrieval-Augmented Generation workflow.
-7. Organized the project structure and documentation.
-8. Managed collaboration using GitHub branches and Pull Requests.
-
----
-
-## Team Contribution
-
-This project was completed collaboratively by a team of four members.
-
-| Name | Role | Contribution |
-|------|------|---------------|
-| **Vigasini** | Milestone Integration | Integrated Milestone 1 and Milestone 2 into a single unified application; ensured seamless interaction between authentication, AI modules, analytics, and administrative functionalities; verified compatibility between all integrated components; organized the GitHub repository structure; managed GitHub branches, commits, and Pull Requests. |
-| **Simran Kapoor** | RAG Pipeline Development | Developed a dedicated notebook for the Retrieval-Augmented Generation (RAG) pipeline; implemented document loading, embedding generation, vector storage, and semantic retrieval; integrated the retrieved context with the AI model for intelligent responses. |
-| **Yuvanesh** | Knowledge Base Preparation | Collected logistics-related PDF documents and supporting reference materials; organized and maintained the project knowledge base; prepared documents for preprocessing and retrieval within the RAG pipeline. |
-| **Tharani** | Documentation & Repository Management | Prepared comprehensive project documentation; created and maintained the README files; organized the GitHub repository structure; assisted in project organization and integration support; verified documentation consistency across milestones. |
-
----
-
-## Future Enhancements
-
-- Live Shipping APIs
-- Real-Time Vessel Tracking
-- Advanced Predictive Analytics
-- Cloud Deployment
-- Multi-Language AI Support
-- Mobile Application
-- Enterprise Reporting Dashboard
-
----
-
-## GitHub Collaboration Workflow
-
-The project followed a collaborative GitHub workflow. Each team member:
-
-- Cloned the repository.
-- Created an individual branch from the `main` branch.
-- Completed their assigned Milestone 3 task.
-- Committed and pushed their changes.
-- Created a Pull Request.
-- Had their changes reviewed and merged into `main` by the project maintainer.
-
-This workflow ensured smooth collaboration, version control, and code quality throughout the project.
-
----
-
-## Repository Guidelines
-
-- Each contributor works on a separate Git branch.
-- Changes are committed with meaningful commit messages.
-- Pull Requests are created for all major updates.
-- Code is reviewed before merging into the main branch.
-- Documentation is updated whenever new features are added.
-- Project structure is kept modular and easy to maintain.
+```text
+┌─────────────────────────────────────────────┐
+│                  USER                       │
+└──────────────────────┬──────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────┐
+│            Authentication Layer             │
+│     Registration • Login • OTP • JWT       │
+└──────────────────────┬──────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────┐
+│              Streamlit Interface            │
+│       Dashboard • Forms • AI Copilot       │
+└──────────────────────┬──────────────────────┘
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ ML Modules   │ │ Route/Weather│ │ Carrier Audit│
+│ Pricing      │ │ Analysis     │ │ Performance  │
+└──────┬───────┘ └──────┬───────┘ └──────┬───────┘
+       │                 │                │
+       └─────────────────┼────────────────┘
+                         ▼
+                ┌─────────────────┐
+                │  AI Copilot     │
+                │   Qwen 2.5      │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │   RAG Pipeline  │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Knowledge Base  │
+                │ Logistics PDFs  │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Retrieved       │
+                │ Context         │
+                └────────┬────────┘
+                         │
+                         ▼
+                Context-Aware Answer
+```
 
 ---
 
-## Project Highlights
+# 🔄 Complete Project Workflow
 
-- Enterprise AI-Powered Freight Management
-- Secure Authentication System
-- Multi-Agent AI Architecture
-- Machine Learning-Based Freight Prediction
-- Route & Weather Analysis
-- Carrier Audit & Compliance Evaluation
-- Analytics Dashboard
-- AI Copilot using Large Language Models
-- Retrieval-Augmented Generation (RAG)
-- Document Knowledge Base
-- GitHub Collaborative Development
-- Professional Documentation
-
----
-
-## References
-
-- Infosys Springboard Internship Guidelines
-- Hugging Face Documentation
-- Streamlit Documentation
-- Scikit-learn Documentation
-- LangChain Documentation
-- FAISS Documentation
-- Python Documentation
-- GitHub Documentation
+1. The user opens the FreightQuote AI application.
+2. The user registers or logs into the platform.
+3. Authentication validates the user's credentials.
+4. The system creates a secure authenticated session.
+5. The user accesses the appropriate dashboard based on their role.
+6. The user selects a freight or logistics module.
+7. Machine Learning models process relevant operational data.
+8. Route and weather information is analysed when required.
+9. Carrier information is evaluated through the Carrier Audit module.
+10. The user can ask questions through the AI Copilot.
+11. If document-based information is required, the RAG pipeline searches the knowledge base.
+12. Relevant document sections are retrieved.
+13. The retrieved context is passed to the AI model.
+14. The Copilot generates a context-aware response.
+15. Analytics and prediction results are displayed through the dashboard.
 
 ---
 
-## License
+# 📸 RAG Pipeline Screenshots
 
-This project was developed for educational purposes as part of the **Infosys Springboard Internship Program**.
+The following screenshots document the **Milestone 3 Retrieval-Augmented Generation (RAG) pipeline**. They focus only on the document-ingestion, knowledge-base, retrieval, evaluation, and answer-generation stages.
 
-All rights belong to the respective project team members and Infosys Springboard.
+> **Note:** Keep the screenshot filenames below inside the `screenshots/` folder. If your actual filenames are different, update the image paths accordingly.
+
+## 📚 RAG Pipeline Overview
+
+![RAG Pipeline Overview](screenshots/rag_pipeline_overview.jpeg)
+
+*Overview of the complete RAG workflow from document collection and preprocessing to semantic retrieval and grounded question answering.*
+
+## 📄 PDF Document Discovery
+
+![PDF Discovery](screenshots/rag_pdf_discovery.jpeg)
+
+*Shows the logistics PDF documents collected and prepared as source material for the RAG knowledge base.*
+
+## 🗂️ Knowledge Base Preparation
+
+![Knowledge Base](screenshots/rag_knowledge_base.jpeg)
+
+*Displays the prepared collection of maritime and logistics documents used by the retrieval system.*
+
+## ✂️ Document Chunking
+
+![Document Chunking](screenshots/rag_chunking.jpeg)
+
+*Demonstrates how extracted document text is divided into smaller chunks before embedding and indexing.*
+
+## 🧠 Embedding & Vector Index
+
+![Vector Index](screenshots/rag_vector_index.jpeg)
+
+*Shows the vector-index preparation stage used for semantic retrieval of relevant document sections.*
+
+## 🔎 Semantic Search
+
+![Semantic Search](screenshots/rag_semantic_search.jpeg)
+
+*Demonstrates retrieval of document sections that are semantically relevant to a user's query.*
+
+## 💬 RAG Question Answering
+
+![RAG Question Answering](screenshots/rag_question_answering.jpeg)
+
+*Shows a user query, retrieved context, and the resulting context-aware answer generated from the knowledge base.*
+
+## 📊 RAG Evaluation Queries
+
+![RAG Evaluation](screenshots/rag_evaluation.jpeg)
+
+*Displays evaluation queries used to assess the quality and relevance of the RAG retrieval and answer-generation workflow.*
+
+## 📈 RAG Evaluation Results
+
+![RAG Evaluation Results](screenshots/rag_score_chart.jpeg)
+
+*Visual representation of RAG evaluation results used to compare retrieval or response quality across test queries.*
+
+## 📦 Generated RAG Artifacts
+
+![RAG Artifacts](screenshots/rag_artifacts.jpeg)
+
+*Shows the generated files and artifacts produced during the RAG pipeline, such as processed data, indexes, and evaluation outputs.*
+
+---
+
+# 🗃️ Data Sources
+
+The platform works with structured datasets and unstructured documents.
+
+### Structured Data
+
+- Freight pricing data
+- Carrier performance data
+- Port information
+- Weather information
+- Shipment data
+
+### Unstructured Data
+
+- Logistics PDF documents
+- Maritime reports
+- Shipping guidelines
+- Freight policies
+- Port operation documents
+- Carrier reference documents
+
+The structured data supports Machine Learning and analytics, while the unstructured documents support the RAG knowledge base.
+
+---
+
+# 🔐 Security Architecture
+
+Security is an important part of the FreightQuote AI platform.
+
+```text
+User
+ │
+ ▼
+Registration / Login
+ │
+ ▼
+Credential Verification
+ │
+ ├── Password Hashing
+ ├── OTP Verification
+ └── Security Question
+ │
+ ▼
+JWT Session
+ │
+ ▼
+Role Verification
+ │
+ ▼
+Authorized Dashboard
+```
+
+### Security Features
+
+- JWT authentication
+- Password hashing
+- Email OTP verification
+- Security questions
+- Role-based authentication
+- Secure session management
+- Logout functionality
+- Administrative access control
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technologies | Purpose |
+|---|---|---|
+| Frontend | Streamlit | User interface and dashboards |
+| Backend | Python | Application and business logic |
+| Database | SQLite | Application and authentication data |
+| Machine Learning | Scikit-learn | Prediction and classification |
+| Data Processing | Pandas, NumPy | Data preparation and analysis |
+| Artificial Intelligence | Qwen 2.5, Hugging Face Transformers | AI Copilot |
+| RAG | LangChain, FAISS, Sentence Transformers | Document retrieval and semantic search |
+| Authentication | PyJWT, bcrypt | Secure authentication and sessions |
+| Deployment | Google Colab, ngrok | Development and public access |
+| Version Control | Git, GitHub | Collaborative development |
+
+---
+
+# 📁 Milestone Organization
+
+```text
+FreightQuote AI
+│
+├── Milestone 1
+│   └── Secure Authentication
+│       ├── Registration
+│       ├── Login
+│       ├── JWT
+│       ├── Password Recovery
+│       ├── Security Questions
+│       └── Gmail OTP
+│
+├── Milestone 2
+│   └── Multi-Agent AI Platform
+│       ├── Freight Pricing
+│       ├── Route & Weather Analysis
+│       ├── Carrier Audit
+│       ├── AI Copilot
+│       ├── Analytics
+│       └── Admin Dashboard
+│
+└── Milestone 3
+    └── Integration & RAG
+        ├── Combined Application
+        ├── RAG Pipeline
+        ├── PDF Knowledge Base
+        ├── Semantic Search
+        ├── Document Retrieval
+        └── Context-Aware Question Answering
+```
+
+---
+
+# 📌 Milestone 1 — Secure Authentication Module
+
+Milestone 1 established the security foundation of the platform.
+
+### Implemented Features
+
+- User registration
+- Secure login
+- JWT authentication
+- Password hashing
+- Forgot password
+- Security questions
+- Email OTP verification
+- Role-based authentication
+- SQLite database integration
+- Secure session management
+- Logout
+
+---
+
+# 📌 Milestone 2 — Multi-Agent AI Platform
+
+Milestone 2 introduced the main AI and Machine Learning capabilities.
+
+| Module | Description |
+|---|---|
+| **AI Copilot** | Provides intelligent logistics assistance using the Qwen 2.5 LLM |
+| **Freight Pricing** | Predicts freight quotation prices using Machine Learning |
+| **Route & Weather Analysis** | Analyses route conditions and weather information |
+| **Carrier Audit** | Evaluates carrier performance, compliance, and reliability |
+| **Analytics Dashboard** | Displays freight statistics, model results, and business insights |
+| **Model Retraining** | Supports retraining with newly available logistics data |
+| **Admin Dashboard** | Provides administrative controls and monitoring |
+
+---
+
+# 📌 Milestone 3 — Integration & RAG Pipeline
+
+Milestone 3 extends the earlier milestones through application integration and document intelligence.
+
+### Major Activities
+
+- Integrated the Milestone 1 authentication functionality.
+- Integrated the Milestone 2 Machine Learning modules.
+- Integrated the AI Copilot.
+- Developed a dedicated RAG pipeline.
+- Collected logistics-related PDF documents.
+- Prepared and organized the document knowledge base.
+- Implemented document preprocessing.
+- Generated document embeddings.
+- Created a vector-search layer.
+- Implemented semantic retrieval.
+- Connected retrieved context with the AI Copilot.
+- Added document-based question answering.
+- Improved application documentation and demonstration workflow.
+
+---
+
+# 🧪 Testing
+
+The application can be evaluated through several levels of testing.
+
+### Functional Testing
+
+Verifies whether individual features work as expected.
+
+Examples:
+
+- Registration
+- Login
+- OTP verification
+- Password recovery
+- Freight prediction
+- RAG search
+- AI Copilot
+
+### Integration Testing
+
+Verifies communication between:
+
+- Authentication and dashboard
+- ML models and application interface
+- RAG pipeline and AI Copilot
+- Database and application modules
+
+### AI Response Validation
+
+Checks whether the AI Copilot provides responses based on the available application and retrieved document context.
+
+### Machine Learning Evaluation
+
+Models are evaluated using suitable classification and regression metrics.
+
+---
+
+# 🚀 Deployment
+
+### Current Development Environment
+
+- Google Colab
+- Streamlit
+- ngrok
+
+Google Colab provides a convenient development environment, especially when GPU resources are required for the Qwen 2.5 model.
+
+### Future Deployment Targets
+
+- Streamlit Cloud
+- AWS
+- Microsoft Azure
+- Docker-based deployment
+
+---
+
+# 👤 User Guide
+
+| Step | Action |
+|---|---|
+| **1** | Register a new account |
+| **2** | Complete authentication |
+| **3** | Log in securely |
+| **4** | Open the FreightQuote AI dashboard |
+| **5** | Generate or analyse freight quotations |
+| **6** | Analyse routes and weather |
+| **7** | Review carrier performance |
+| **8** | Ask questions through AI Copilot |
+| **9** | Search logistics documents using RAG |
+| **10** | Review analytics and insights |
+
+---
+
+# 📊 Project Outcomes
+
+Milestone 3 results in a more integrated and intelligent FreightQuote AI platform.
+
+### Major Outcomes
+
+- Intelligent freight quotation support
+- Machine Learning-based prediction
+- Route and weather analysis
+- Carrier performance evaluation
+- AI-powered logistics assistance
+- Secure enterprise authentication
+- Retrieval-Augmented Generation
+- Semantic document search
+- Logistics document knowledge base
+- Context-aware question answering
+- Integrated analytics
+- Modular application architecture
+
+---
+
+# 👥 Team Contribution
+
+This project was completed collaboratively by a team of four members as part of the **Infosys Springboard Internship Program**.
+
+| Team Member | Role | Contribution |
+|---|---|---|
+| **Vigasini** | Milestone Integration | Integrated Milestone 1 and Milestone 2 into a unified application; connected authentication, AI modules, analytics, and administrative functionality; verified compatibility between integrated components. |
+| **Simran Kapoor** | RAG Pipeline Development | Developed the RAG pipeline; implemented document loading, preprocessing, embedding generation, vector storage, semantic retrieval, and integration of retrieved context with the AI model. |
+| **Yuvanesh** | Knowledge Base Preparation | Collected logistics-related PDF documents and supporting reference materials; organized the knowledge base and prepared documents for RAG processing and retrieval. |
+| **Tharani** | Documentation & Integration Support | Prepared project documentation, maintained milestone documentation, supported project organization and integration activities, and ensured consistency of project information across milestones. |
+
+---
+
+# 🌟 Milestone 3 Highlights
+
+The major achievement of Milestone 3 is the transition from separate AI and authentication modules into a more connected **maritime freight intelligence platform**.
+
+### Key Highlights
+
+- 🔐 Secure authentication foundation
+- 💰 ML-based freight pricing
+- 🗺️ Route and weather analysis
+- 🚢 Carrier performance analysis
+- 🤖 Qwen 2.5 AI Copilot
+- 📚 PDF-based RAG knowledge base
+- 🔎 Semantic document retrieval
+- 🧠 Context-aware question answering
+- 📊 Analytics and business insights
+- 🔄 Model evaluation and retraining support
+- 🧩 Integrated milestone architecture
+
+---
+
+
+
+## 🎓 Learning Outcomes
+
+Through Milestone 3, the team gained practical experience in:
+
+- AI application development
+- Machine Learning
+- Natural Language Processing
+- Large Language Models
+- Retrieval-Augmented Generation
+- Semantic search
+- Vector databases
+- Document processing
+- Streamlit application development
+- Authentication and security
+- Database integration
+- AI system integration
+- Testing and validation
+- Collaborative software development
+
+---
+
+
