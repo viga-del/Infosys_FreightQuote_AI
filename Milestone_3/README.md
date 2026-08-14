@@ -1,4 +1,4 @@
-# FreightQuote AI – Enterprise AI-Powered Maritime Brokerage Platform
+# Agentic AI for Maritime Freight Pricing and Route Optimization
 
 **Infosys Springboard Internship Project – Milestone 3**
 
