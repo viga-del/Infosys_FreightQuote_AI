@@ -1,4 +1,3 @@
-
 # Agentic AI for Maritime Freight Pricing & Route Optimization
 
 **Infosys Springboard Internship — Milestone 4**
@@ -68,14 +67,14 @@ The application can be viewed as four connected stages:
                  └────────────┬─────────────┘
                               │
                  ┌────────────▼─────────────┐
-                 │ Data & Reasoning Layer  │
-                 │ SQLite • ML • FAISS     │
+                 │     Data & Reasoning     │
+                 │ SQLite • ML • FAISS      │
                  │ Route/Quote Calculators  │
                  └────────────┬─────────────┘
                               │
                  ┌────────────▼─────────────┐
                  │     AI Generation Layer │
-                 │ Qwen LLM + Translation │
+                 │ Qwen LLM + Translation  │
                  └──────────────────────────┘
 ```
 
@@ -340,6 +339,8 @@ The visualizations are used for both operational monitoring and model comparison
 | Data Preparation | Kaggle + Faker | Dataset preparation and realistic demo-data generation |
 | Deployment | Google Colab + ngrok / Cloudflare Tunnel | GPU execution and public application access |
 
+---
+
 ## 🗃️ Data & Storage
 
 SQLite acts as the main application database.
@@ -452,6 +453,8 @@ freight_app/
 
 ---
 
+## 📸 Application Screenshots
+
 ### Login & Access
 ![Login Screen](./screenshots/login.jpeg)
 *Secure sign-in screen with role-based demo credentials.*
@@ -516,8 +519,6 @@ freight_app/
 ![Data Feed Center](./screenshots/data_feed_center.jpeg)
 *Manual and bulk CSV data ingestion into the live database.*
 
-
-
 ---
 
 ## 🌟 Milestone 4 Highlights
@@ -538,16 +539,13 @@ The major outcome of this milestone is the transition from separate project comp
 
 ## 👥 Team Contribution
 
-This project was developed as part of the **Infosys Springboard Internship**.
+This project was developed collaboratively as part of the **Infosys Springboard Internship**. Each team member contributed to different modules of the Milestone 4 integrated platform.
 
-Milestone 4 focused on integrating the previously developed modules, improving the application workflow, connecting the AI components, and preparing the platform for an end-to-end demonstration.
+| No. | Team Member | Contribution |
+|---|---|---|
+| **01** | **Tharani Mahasamudram** | **Dynamic Margin Predictor & Yield Optimizer**; **Customs, Tariff & Regulatory Intelligence**; **Digital Bill of Lading & OCR**; **Alerts & Incidents**; **Knowledge Graph**; **Digital Twin**; **Anomaly/Risk Scanner**; **AI Copilot Quality Requirement** |
+| **02** | **Vigashini S** | **GitHub & README Documentation**; **RAG & Data Pipeline**; **User Profile Management**; **Profile Picture Upload**; **Change Password Functionality** |
+| **03** | **Megha Ramthirth** | **Extended Admin Dashboard** — Add, Delete, Promote, Demote and Unlock Users; **Route AI & Maritime Fuel Efficiency**; **Dynamic Freight Pricing**; **Carrier Performance & Capacity Intelligence**; **Weather Risk & Storm Telemetry** |
+| **04** | **Kamireddy Samatha Sri** | **Signup/Login with OTP Verification**; **Security Question & Security Answer**; **OTP & Security Question Password Recovery**; **Secure Session/JWT Handling**; **Logout Functionality** |
 
 ---
-
-## 📌 Project Status
-
-**Milestone 4 — Integrated Application**
-
-The current milestone represents the integrated version of FreightQuote AI, combining the major agents and shared platform services into a single workflow.
-
---
