@@ -1,4 +1,4 @@
-# 🚢 FreightQuote AI Platform — Milestone 2
+# 🚢 Agentic AI for Maritime Freight Pricing and Route Optimization — Milestone 2
 
 ## 📌 What Milestone 2 Adds on Top of Milestone 1
 
