@@ -29,14 +29,12 @@
 
 **Final Team Members**
 
-| Name | Role / What They Built | GitHub Handle |
-|:-----|:------------------------|:----------------|
-| `<Name 1>` | `<e.g. Agents 1–3, Route & Pricing logic>` | [@`<handle>`](https://github.com/) |
-| `<Name 2>` | `<e.g. Agents 4–6, Weather & Compliance>` | [@`<handle>`](https://github.com/) |
-| `<Name 3>` | `<e.g. Agents 7–9, Docs/Translation/RAG>` | [@`<handle>`](https://github.com/) |
-| `<Name 4>` | `<e.g. Auth, RBAC, Admin Dashboard>` | [@`<handle>`](https://github.com/) |
-
----
+| No. | Team Member | Contribution |
+|:---:|:------------|:--------------|
+| 01 | Tharani Mahasamudram | Dynamic Margin Predictor & Yield Optimizer; Customs, Tariff & Regulatory Intelligence; Digital Bill of Lading & OCR; Alerts & Incidents; Knowledge Graph; Digital Twin; Anomaly/Risk Scanner; AI Copilot Quality Requirement |
+| 02 | Vigashini S | GitHub & README Documentation; Repository Setup & All GitHub Management; `requirements.txt` Creation & Dependency Handling; RAG & Data Pipeline; User Profile Management; Profile Picture Upload; Change Password Functionality |
+| 03 | Megha Ramthirth | Extended Admin Dashboard — Add, Delete, Promote, Demote and Unlock Users; Route AI & Maritime Fuel Efficiency; Dynamic Freight Pricing; Carrier Performance & Capacity Intelligence; Weather Risk & Storm Telemetry |
+| 04 | Kamireddy Samatha Sri | Signup/Login with OTP Verification; Security Question & Security Answer; OTP & Security Question Password Recovery; Secure Session/JWT Handling; Logout Functionality |
 
 ## Overall Project Explanation
 
