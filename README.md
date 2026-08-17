@@ -242,7 +242,7 @@ A sidebar status panel — **"🤖 Neural AI Model & GPU Status"** — shows liv
 
 ## Admin Dashboard
 
-![Admin Dashboard](docs/screenshots/admin-dashboard.jpeg)
+![Admin Dashboard](docs/screenshots/admin_dashboard.jpeg)
 
 **Admin-only capabilities:**
 - User management & role assignment
@@ -264,7 +264,7 @@ A sidebar status panel — **"🤖 Neural AI Model & GPU Status"** — shows liv
 
 | Admin Dashboard |
 |---|
-| ![Admin](docs/screenshots/admin-dashboard.jpeg) |
+| ![Admin](docs/screenshots/admin_dashboard.jpeg) |
 
 
 
