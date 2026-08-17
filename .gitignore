@@ -1,1 +1,28 @@
 
+# Environment variables (never commit real secrets)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.ipynb_checkpoints/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Model weights / large downloads (if cached locally)
+*.bin
+*.safetensors
+models/
