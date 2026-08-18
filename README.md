@@ -254,8 +254,7 @@ A sidebar status panel — **"🤖 Neural AI Model & GPU Status"** — shows liv
 
 | Login Screen | Main Dashboard |
 |---|---|
-| ![Login](docs/screenshots/login.jpeg) | ![Dashboard](docs/screenshots/dashboard.jpeg) |
-
+| ![Login](docs/screenshots/login.jpeg) | 
 | Agent Tab Example | AI Copilot |
 |---|---|
 | ![Agent](docs/screenshots/agent-example.jpeg) | ![Copilot](docs/screenshots/copilot-chat.jpeg) |
