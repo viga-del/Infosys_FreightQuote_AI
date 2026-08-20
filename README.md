@@ -434,6 +434,6 @@ See [`requirements.txt`](requirements.txt) in the repository root for the full p
 This project was built as part of the **Infosys Springboard Internship — Batch 1**.
 💐 Thanks to our mentor, **MOHAMEDSIPLI M**, for guidance and feedback throughout development.
 
-⭐ *If this project helped you, consider giving it a star!* ⭐
+
 
 </div>
