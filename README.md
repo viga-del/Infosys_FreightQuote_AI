@@ -64,7 +64,7 @@ FreightQuote AI is an agentic decision-support platform for an ocean-freight bro
 
 The platform follows a **four-layer agentic pattern**:
 
-![Architecture Diagram](docs/architecture-diagram.jpeg)
+![Architecture Diagram](docs/architecture-diagram.png)
 
 A sidebar status panel — **"🤖 Neural AI Model & GPU Status"** — shows live loading state for both the Qwen and NLLB engines (🟢 Active / 🟡 Loading).
 
