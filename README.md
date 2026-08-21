@@ -62,7 +62,6 @@ FreightQuote AI is an agentic decision-support platform for an ocean-freight bro
 
 ### 🏗️ Architecture Overview
 
-The platform follows a **four-layer agentic pattern**:
 
 ![Architecture Diagram](docs/architecture-diagram.png)
 
