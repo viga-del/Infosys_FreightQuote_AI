@@ -406,7 +406,7 @@ See [`requirements.txt`](requirements.txt) in the repository root for the full p
 
 ## 🎬 Demo Video
 
-▶️ See [`docs/demo/demo.mp4`](docs/demo.mp4) for the full demo recording.
+▶️ See [`docs/demo.mp4`](docs/demo.mp4) for the full demo recording.
 
 ---
 
